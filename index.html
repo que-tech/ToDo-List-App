@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <header>
+        <h1>ToDo App</h1>
+    </header>
+
+    <section id="taskList">
+        <!-- Task items will be dynamically added here -->
+    </section>
+
+    <button id="openModalBtn" onclick="openModal()">Add New Task</button>
+
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add New Task</h2>
+            <label for="task">Task:</label>
+            <input type="text" id="task">
+            <label for="details">Details:</label>
+            <textarea id="details"></textarea>
+            <button onclick="addTask()">Save Task</button>
+        </div>
+    </div>
+<!-- Add this div for the edit modal -->
+<!-- Update this div for the edit modal -->
+<div id="editTaskModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Task</h2>
+    <label for="editTaskName">Task:</label>
+    <input type="text" id="editTaskName">
+    <label for="editTaskDetails">Details:</label>
+    <textarea id="editTaskDetails"></textarea>
+    <button id="saveEditBtn" onclick="saveEditedTask()">Save Changes</button>
+  </div>
+</div>
+</div>
+
+<div id="taskDetailsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeTaskDetailsModal()">&times;</span>
+    <h2>Task Details</h2>
+    <p><strong>Details:</strong> <span id="taskDetails"></span></p>
+    <p><strong>Created Date:</strong> <span id="createdDate"></span></p>
+    <p><strong>Last Updated Date:</strong> <span id="lastUpdatedDate"></span></p>
+  </div>
+</div>
+
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFeedbackModal()">&times;</span>
+            <p id="feedbackMessage"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
